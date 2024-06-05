@@ -1,4 +1,4 @@
-# Tinykiwi
+# Tinykiwi 🥝
 A tiny chatbot with a temporary chat-session memory using text embedding.
 
 ---
