@@ -18,7 +18,7 @@ pip install numpy
 3. [get an Openai api key](https://openai.com/index/openai-api/)
 4. run it:
 ```
-python3 tinykiwi.py
+python tinykiwi.py
 ```
 ## Some usefull links:
 1. [Preserving context/session by refeeding responses](https://community.openai.com/t/how-to-preserve-the-context-session-of-a-conversation-with-the-api/324986/1)
