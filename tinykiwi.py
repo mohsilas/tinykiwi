@@ -1,5 +1,5 @@
 import readline # activates input line editing (using arrow keys)
-import faiss  # if your IDE is panicing about a missing faiss argument, ignore it. (check this -> https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/)
+import faiss  # if your IDE is panicing about a missing faiss argument, ignore it.
 import numpy as np
 from openai import OpenAI
 
