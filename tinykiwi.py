@@ -3,7 +3,6 @@ import faiss  # if your IDE is panicing about a missing faiss argument, ignore i
 import numpy as np
 from openai import OpenAI
 
-
 d = 256 # size of a the embedding matrix - depends on what model you're using
 embedding_index_db = faiss.IndexFlatL2(d) # build the index, d=size of vectors
 embedding_text_db = []
@@ -20,11 +19,9 @@ def embedding_generate(text):
     response = client.embeddings.create(model="text-embedding-3-small", input=text, encoding_format="float") # encoding_format="float" gives reduced embedding size
     return np.array([response.data[0].embedding[:256]], dtype=np.float32) # faiss expects a float32 np matrix of size n-by-d, in this case n=1, d=256
 
-
 def embedding_index_db_add(text):
     embedding_text_db.append(text)
     embedding_index_db.add(embedding_generate(text))
-
 
 def embedding_index_db_search_similar(embd):
     _, indexes = embedding_index_db.search(embd, embedding_index_db_search_return_size)
@@ -32,7 +29,7 @@ def embedding_index_db_search_similar(embd):
     #print(indexes) # --- for debugging
     return [(embedding_text_db[i] if i > 0 else "") for i in indexes] # faiss returns -1 if no similar embedding was found
 
-
+# main loop _____________________________________
 while(user_i != "q"):
     new_embedding = embedding_generate(user_i)
     query = "acting as a chatbot, here're some pervious interactions with the user to improve your responses:\n" + \
