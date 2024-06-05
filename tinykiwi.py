@@ -3,7 +3,7 @@ import faiss  # if your IDE is panicing about a missing faiss argument, ignore i
 import numpy as np
 from openai import OpenAI
 
-d = 256 # size of a the embedding matrix - depends on what model you're using
+d = 256 # size of a the embedding - depends on what model you're using
 embedding_index_db = faiss.IndexFlatL2(d) # build the index, d=size of vectors
 embedding_text_db = []
 embedding_index_db_search_return_size = 7
